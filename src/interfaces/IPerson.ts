@@ -1,7 +1,7 @@
 export interface IPerson {
-  id: number
-  firstName: string
-  lastName: string
-  age: number
-  gender: string
+  readonly id: string
+  readonly firstName: string
+  readonly lastName: string
+  readonly age: string
+  readonly gender: string
 }

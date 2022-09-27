@@ -28,89 +28,9 @@ a {
   margin: 0 auto;
 }
 
-.search {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-
-  &__btn {
-    margin-left: 10px;
-  }
-}
-
-.table {
-  text-align: center;
-  display: table;
-  max-width: 1600px;
-  width: 100%;
-  margin: 0 auto;
-  border-collapse: collapse;
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000;
-  }
-
-  &__row {
-    .table__cell:nth-child(odd) {
-      display: none;
-    }
-  }
-
-  &__row,
-  &__head {
-    display: table-row;
-  }
-
-  &__row:not(:last-of-type),
-  &__head {
-    border-bottom: 1px solid #000;
-  }
-
-  &__cell {
-    padding: 5px 10px;
-    text-align: center;
-    float: left;
-    width: 20%;
-  }
-
-  &__name {
-    margin-bottom: 20px;
-  }
-}
-
 @media (max-width:600px) {
-  .table__cell {
-    font-size: 14px;
-  }
-
   .container {
     padding: 10px;
   }
 }
 
-@media (max-width:420px) {
-  .table {
-    &__row {
-      .table__cell {
-        padding: 5px 0px;
-      }
-
-      .table__cell:nth-child(odd) {
-        display: block;
-      }
-    }
-
-    &__row,
-    &__head {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__head {
-      display: none;
-    }
-  }
-}

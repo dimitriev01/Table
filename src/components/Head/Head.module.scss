@@ -1,0 +1,12 @@
+.head {
+  display: table-row;
+  border-bottom: 1px solid #000;
+  background: #fff;
+}
+
+
+@media (max-width:420px) {
+  .head {
+    display: none;
+  }
+}

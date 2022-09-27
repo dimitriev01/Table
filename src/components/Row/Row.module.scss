@@ -1,0 +1,33 @@
+.row {
+  display: table-row;
+  transition: all .3s linear;
+
+  &_active {
+    background: rgb(255, 140, 133);
+  }
+
+  &__cell:nth-child(odd) {
+    display: none;
+  }
+}
+
+.row:hover {
+  background: #82f892;
+}
+
+.row:not(:last-of-type) {
+  border-bottom: 1px solid #000;
+}
+
+@media (max-width:420px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+
+    &__cell:nth-child(odd) {
+      display: block;
+    }
+  }
+}

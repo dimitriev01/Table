@@ -2,18 +2,17 @@ import React from 'react';
 import cl from './Btn.module.scss';
 
 interface BtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  onClick: React.MouseEventHandler<HTMLButtonElement>
   className?: string
   children: React.ReactNode
 }
 
-const Btn: React.FC<BtnProps> = ({ className, onClick, children, ...props }) => {
+const Btn: React.FC<BtnProps> = ({ className, onClick, children }) => {
   return (
     <button
       onClick={onClick}
-      {...props}
       className={[
-        cl.btn, 
+        cl.btn,
         className,
       ].join(' ')}
     >
