@@ -1,13 +1,8 @@
 .cell {
   padding: 5px 10px;
-  text-align: center;
   float: left;
   width: 20%;
 }
-
-// .cell:nth-child(odd) {
-//   display: none;
-// }
 
 @media (max-width:600px) {
   .cell {
@@ -17,10 +12,7 @@
 
 @media (max-width:420px) {
   .cell {
+    width: 100%;
     padding: 5px 0px;
   }
-
-  // .cell:nth-child(odd) {
-  //   display: block;
-  // }
 }

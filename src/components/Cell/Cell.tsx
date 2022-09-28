@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './Cell.module.scss'
+import cl from './Cell.module.scss';
 
 interface CellProps {
   cell: string

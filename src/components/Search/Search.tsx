@@ -8,16 +8,23 @@ interface SearchProps {
   query: string
   setQuery: (query: string) => void
   persons: IPerson[]
+  setIdSearched: (id: string[]) => void
 }
 
-const Search: React.FC<SearchProps> = ({ query, setQuery, persons }) => {
+const Search: React.FC<SearchProps> = ({ query, setQuery, persons, setIdSearched }) => {
   const [countSearched, setCountSearched] = useState<number>(0);
   const [isTriedToSearch, setIsTriedToSearch] = useState<boolean>(false);
   const handleOnClick = () => {
-    setIsTriedToSearch(true)
+    setIsTriedToSearch(true);
     let queryLowerCase = query.toLowerCase();
+    if (!queryLowerCase.length) {
+      setCountSearched(0);
+      setIdSearched([]);
+      setQuery('');
+      return;
+    }
 
-    const searchedPersons = persons && persons.filter(p =>
+    const searchedPersons = persons && persons.filter((p) =>
       p.id.includes(queryLowerCase) ||
       p.firstName.toLowerCase().includes(queryLowerCase) ||
       p.lastName.toLowerCase().includes(queryLowerCase) ||
@@ -25,8 +32,9 @@ const Search: React.FC<SearchProps> = ({ query, setQuery, persons }) => {
       p.gender.toLowerCase().includes(queryLowerCase)
     );
 
-    setCountSearched(searchedPersons.length)
-    setQuery('')
+    setIdSearched(searchedPersons.map((p) => { return (p.id) }));
+    setCountSearched(searchedPersons.length);
+    setQuery('');
   }
 
   return (
@@ -47,7 +55,7 @@ const Search: React.FC<SearchProps> = ({ query, setQuery, persons }) => {
         isTriedToSearch &&
         <div className={cl.coincidence}>
           {
-            countSearched === 0 ?
+            (countSearched === 0) ?
               'Ничего не найдено' :
               `Совпадений: ${countSearched}`
           }

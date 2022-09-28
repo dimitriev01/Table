@@ -21,13 +21,35 @@
 
 @media (max-width:420px) {
   .row {
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px;
+    margin: 0;
+
+    &__mesh {
+      display: flex;
+      width: 100%;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      flex-direction: column;
+    }
+
+    &__mesh:last-of-type {
+      border-bottom: 1px solid #000;
+    }
 
     &__cell:nth-child(odd) {
+      padding: 5px 0px;
+      width: 100%;
+      background: #fff;
       display: block;
     }
   }
+
+  .row:not(:last-of-type) {
+    border: 0;
+  }
+
 }

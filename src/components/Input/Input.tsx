@@ -6,7 +6,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   ref?: React.ForwardedRef<HTMLInputElement>
 }
 
-// eslint-disable-next-line react/display-name
 const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, disabled, ...otherProps }, ref) => {
   return (
     <input

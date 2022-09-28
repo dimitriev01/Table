@@ -7,8 +7,7 @@ interface BtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
 }
 
-const Btn: React.FC<BtnProps> = ({ className, onClick, children }) => {
-  return (
+const Btn: React.FC<BtnProps> = ({ className, onClick, children }) => (
     <button
       onClick={onClick}
       className={[
@@ -19,6 +18,5 @@ const Btn: React.FC<BtnProps> = ({ className, onClick, children }) => {
       {children}
     </button >
   );
-};
 
 export default Btn;
